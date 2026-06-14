@@ -1,15 +1,18 @@
-import relaxedSrc from '../assets/characters/expression_relaxed.png'
-import annoyedSrc from '../assets/characters/expression_annoyed.png'
-import scaredSrc from '../assets/characters/expression_scared.png'
-import panickedSrc from '../assets/characters/expression_panicked.png'
-
 /** 게이지 눈금 (구간 경계) */
 export const GAUGE_MARKS = [25, 50, 75, 100]
+
+/** public/images — 배경 포함 전체 장면 표정 */
+export const EXPRESSION_IMAGE_SRC = {
+  relaxed: '/images/expression_relaxed.png',
+  annoyed: '/images/expression_annoyed.png',
+  scared: '/images/expression_scared.png',
+  panicked: '/images/expression_panicked.png',
+}
 
 export const EXPRESSION_STAGES = {
   relaxed: {
     id: 'relaxed',
-    src: relaxedSrc,
+    src: EXPRESSION_IMAGE_SRC.relaxed,
     label: '여유',
     ariaLabel: '여유로운 표정',
     min: 0,
@@ -17,7 +20,7 @@ export const EXPRESSION_STAGES = {
   },
   annoyed: {
     id: 'annoyed',
-    src: annoyedSrc,
+    src: EXPRESSION_IMAGE_SRC.annoyed,
     label: '불쾌',
     ariaLabel: '불쾌한 표정',
     min: 26,
@@ -25,7 +28,7 @@ export const EXPRESSION_STAGES = {
   },
   scared: {
     id: 'scared',
-    src: scaredSrc,
+    src: EXPRESSION_IMAGE_SRC.scared,
     label: '공포',
     ariaLabel: '두려운 표정',
     min: 51,
@@ -33,7 +36,7 @@ export const EXPRESSION_STAGES = {
   },
   panicked: {
     id: 'panicked',
-    src: panickedSrc,
+    src: EXPRESSION_IMAGE_SRC.panicked,
     label: '패닉',
     ariaLabel: '공포에 질린 표정',
     min: 76,

@@ -10,7 +10,7 @@ export const ENDING_VIDEO_SRC = endingVideoSrc
 /** 게임 시작 전 프리로드 — 이미지 */
 export function getGameImageUrls() {
   const characterUrls = Object.values(EXPRESSION_STAGES).map((stage) => stage.src)
-  return [JAR_FRAME_SRC, ...characterUrls]
+  return [...new Set([JAR_FRAME_SRC, ...characterUrls])]
 }
 
 /** @deprecated 이미지 URL 목록 — getGameImageUrls 사용 */
