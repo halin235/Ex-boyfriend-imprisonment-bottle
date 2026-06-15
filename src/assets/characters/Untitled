@@ -1,0 +1,31 @@
+내 프로젝트의 public/images/ 폴더 내에 있는 기존 이미지 4장을, 내가 새로 준비한 이미지들로 교체하려고 해. 아래 가이드를 참고해서 작업해 줘.
+
+1. 기존 이미지 파일명 (교체 대상):
+
+expression_annoyed.png
+
+expression_panicked.png
+
+expression_relaxed.png
+
+expression_scared.png
+
+2. 교체할 이미지 파일명 (데이터):
+
+expression_annoyed with background → expression_annoyed.png로 저장 및 교체
+
+expression_panicked with background → expression_panicked.png로 저장 및 교체
+
+expression_relaxed with background → expression_relaxed.png로 저장 및 교체
+
+expression_scared with background → expression_scared.png로 저장 및 교체
+
+3. 작업 요청 사항:
+
+위에 나열된 4개의 이미지 파일(with background가 붙은 이미지들)을 사용하여, 기존 public/images/ 폴더에 있는 파일들을 각각 위 파일명으로 덮어씌워 줘.
+
+파일명이 반드시 기존 이름과 일치해야 해.
+
+이미지가 교체된 후, JarComponent에서 봉인 게이지 상태에 따라 각 표정이 제대로 반영되는지 로직을 확인하고 업데이트해 줘.
+
+이미지가 바뀐 만큼 화면에서 자연스럽게 렌더링되는지 확인 부탁해!"
