@@ -34,9 +34,7 @@ async function loadTossFramework() {
   }
 
   try {
-    const mod = await import(
-      /* @vite-ignore */ '@apps-in-toss/web-framework'
-    )
+    const mod = await import('@apps-in-toss/web-framework')
     return mod
   } catch {
     return createTossBridgeMock()
