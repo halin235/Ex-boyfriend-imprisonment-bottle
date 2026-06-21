@@ -5,5 +5,5 @@ export const GAME_PHASE = {
   DELETED: 'deleted',
 }
 
-/** 게이지 100% 도달 후 파괴 연출 전 최대 강도 유지 (ms) — 임계 흔들림에서 자연스럽게 이어짐 */
+/** 감정 정리 100% 도달 후 마무리 연출 전 최대 강도 유지 (ms) */
 export const PRE_BURST_DURATION_MS = 400

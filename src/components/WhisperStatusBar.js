@@ -5,18 +5,18 @@ import WhisperWaveform from './WhisperWaveform'
 
 const STATUS_COPY = {
   [AUDIO_MODES.WHISPER]: {
-    title: '속삭임 인식 중...',
-    hint: '작게 속삭일수록 봉인이 빨라져요',
+    title: '음성 테라피 진행 중',
+    hint: '차분히 말할수록 감정 정리가 깊어져요',
     tone: 'listening',
   },
   [AUDIO_MODES.LOUD]: {
-    title: '소리가 너무 커요',
-    hint: '전남친이 저항하고 있어요 · 작게 속삭여 주세요',
+    title: '목소리가 조금 커요',
+    hint: '천천히 낮은 목소리로 이어가 주세요',
     tone: 'resist',
   },
   [AUDIO_MODES.SILENT]: {
-    title: '속삭임을 기다리는 중...',
-    hint: '항아리에 대고 작게 말해 보세요',
+    title: '목소리를 기다리는 중',
+    hint: '떠오르는 감정을 편하게 말해 보세요',
     tone: 'idle',
   },
 }

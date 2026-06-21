@@ -1,7 +1,7 @@
 /** 진동 쿨타임 — 토스 인앱 내 중복 햅틱 방지 (ms) */
 const HAPTIC_COOLDOWN_MS = 100
 
-/** 100% / 파괴 연출 — 항아리가 터지는 강렬한 타격감 */
+/** 100% / 마무리 연출 — 감정 비우기 완료 피드백 */
 export const DESTRUCTION_PATTERN = [40, 30, 40, 50, 100]
 
 const MILESTONE_PATTERNS = {
@@ -19,7 +19,7 @@ function canVibrate() {
 
 /**
  * @param {number | number[]} pattern
- * @param {{ force?: boolean }} [options] — force: 쿨타임 무시 (파괴 연출 등)
+ * @param {{ force?: boolean }} [options] — force: 쿨타임 무시 (마무리 연출 등)
  */
 function safeVibrate(pattern, options = {}) {
   if (!canVibrate()) return false
@@ -41,10 +41,10 @@ function safeVibrate(pattern, options = {}) {
 function logHaptic(kind, mark, ok) {
   if (!import.meta.env.DEV || import.meta.env.VITE_GAME_DEBUG === 'false') return
   const label = mark != null ? `${mark}%` : kind
-  console.log('[전남친항아리] 햅틱', label, ok ? 'vibrate' : 'skip')
+  console.log('[감정비우기] 햅틱', label, ok ? 'vibrate' : 'skip')
 }
 
-/** 토스 인앱 파괴 연출 햅틱 */
+/** 토스 인앱 마무리 연출 햅틱 */
 export function triggerDestructionHaptic() {
   if (!canVibrate()) {
     logHaptic('destroy', null, false)
@@ -55,7 +55,7 @@ export function triggerDestructionHaptic() {
   return ok
 }
 
-/** 게이지 구간(25·50·75·100%) 돌파 햅틱 */
+/** 감정 정리 단계(25·50·75·100%) 도달 햅틱 */
 export function triggerGaugeMilestoneHaptic(mark) {
   if (!canVibrate()) {
     logHaptic('milestone', mark, false)

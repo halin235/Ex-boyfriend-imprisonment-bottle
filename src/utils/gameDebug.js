@@ -4,7 +4,7 @@
  */
 import { CRITICAL_GAUGE_START } from './criticalShake'
 
-const PREFIX = '[전남친항아리]'
+const PREFIX = '[감정비우기]'
 
 export function isGameDebugEnabled() {
   if (!import.meta.env.DEV) return false
@@ -55,14 +55,14 @@ export function debugGaugeState({ gauge, stageId, stageLabel, criticalIntensity 
 
   if (stageId !== lastLoggedExpression) {
     lastLoggedExpression = stageId
-    debugLog('표정', `${stageLabel} (${stageId}) — 게이지 약 ${rounded}%`)
+    debugLog('감정상태', `${stageLabel} (${stageId}) — 비워낸 정도 약 ${rounded}%`)
   }
 
   if (criticalIntensity > 0 && !criticalShakeLogged) {
     criticalShakeLogged = true
     debugLog(
-      '임계흔들림',
-      `게이지 ${CRITICAL_GAUGE_START}%+ — 항아리 흔들림·룬 깜빡임 시작 (intensity=${criticalIntensity.toFixed(2)})`,
+      '감정고조',
+      `비워낸 정도 ${CRITICAL_GAUGE_START}%+ — 마무리 연출 시작 (intensity=${criticalIntensity.toFixed(2)})`,
     )
   }
 
@@ -72,11 +72,11 @@ export function debugGaugeState({ gauge, stageId, stageLabel, criticalIntensity 
 }
 
 export function debugMilestone(mark, vibrated) {
-  debugLog('게이지마일스톤', `${mark}% 돌파`, { haptic: vibrated ? 'vibrate OK' : 'vibrate skip' })
+  debugLog('정리단계', `${mark}% 도달`, { haptic: vibrated ? 'vibrate OK' : 'vibrate skip' })
 }
 
 export function debugAutoDestroy() {
-  debugLog('파괴', '게이지 100% → ending.mp4 자동 재생')
+  debugLog('마무리', '비워낸 정도 100% → ending.mp4 자동 재생')
 }
 
 export function resetGameDebugSession() {

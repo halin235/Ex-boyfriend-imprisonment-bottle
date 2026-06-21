@@ -5,7 +5,7 @@ import { triggerGaugeMilestoneHaptic } from '../utils/haptics'
 const PULSE_DURATION_MS = 100
 
 /**
- * 게이지 25·50·75·100% 돌파 시 햅틱 + 시각 펄스 콜백
+ * 감정 정리 25·50·75·100% 도달 시 햅틱 + 시각 펄스 콜백
  * @param {number} gauge
  * @param {boolean} enabled
  * @param {(mark: number) => void} [onMilestonePulse] — JarComponent 미세 떨림 동기화

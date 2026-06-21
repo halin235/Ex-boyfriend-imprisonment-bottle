@@ -83,7 +83,7 @@ const DestroySequence = forwardRef(function DestroySequence(
     [playVideo],
   )
 
-  /** 게이지 100% 도달 후 마운트 시 자동 재생 (muted → 브라우저 허용) */
+  /** 감정 정리 100% 도달 후 마운트 시 자동 재생 (muted → 브라우저 허용) */
   useEffect(() => {
     if (!autoPlayOnMount || frozen) return undefined
 
@@ -171,7 +171,7 @@ const DestroySequence = forwardRef(function DestroySequence(
           preload={frozen ? 'auto' : 'metadata'}
           onEnded={handleEnded}
           onError={handleError}
-          aria-label="항아리 파괴 엔딩 영상"
+          aria-label="감정 비우기 마무리 영상"
         />
       </div>
     </motion.div>

@@ -1,13 +1,13 @@
 import endingVideoSrc from '../assets/videos/ending.mp4'
 import { EXPRESSION_STAGES } from './expressionStages'
 
-/** 항아리 프레임 */
+/** 감정 비우기 메인 일러스트 */
 export const JAR_FRAME_SRC = '/images/sealing-jar.png'
 
 /** 최종 엔딩 영상 (Vite asset URL) */
 export const ENDING_VIDEO_SRC = endingVideoSrc
 
-/** 게임 시작 전 프리로드 — 이미지 */
+/** 서비스 시작 전 프리로드 — 이미지 */
 export function getGameImageUrls() {
   const characterUrls = Object.values(EXPRESSION_STAGES).map((stage) => stage.src)
   return [...new Set([JAR_FRAME_SRC, ...characterUrls])]

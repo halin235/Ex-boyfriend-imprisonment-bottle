@@ -8,7 +8,7 @@ export default function WhisperWaveform({ volumeLevel = 0, active }) {
     <div
       className="flex h-7 items-end justify-center gap-1"
       role="img"
-      aria-label={active ? '속삭임 파형' : '대기 중 파형'}
+      aria-label={active ? '음성 테라피 파형' : '대기 중 파형'}
     >
       {BAR_HEIGHTS.map((base, index) => {
         const scale = active ? 0.35 + volumeLevel * 0.85 : 0.2

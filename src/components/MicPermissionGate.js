@@ -36,19 +36,19 @@ export default function MicPermissionGate({
           마이크 권한이 필요해요
         </h2>
         <p id="mic-permission-desc" className="mt-2 text-sm leading-relaxed text-[#4E5968]">
-          이 게임은 <strong className="font-semibold text-[#191F28]">속삭이며 감정을 배출</strong>하는
-          방식으로 봉인 강도를 올려요. 마이크는 속삭임 인식에만 사용되며, 인터랙션이 끝나면
-          바로 꺼집니다.
+          이 서비스는 <strong className="font-semibold text-[#191F28]">음성 테라피</strong>를 통해
+          떠오르는 감정을 말로 마주하고 비워내도록 돕습니다. 마이크는 목소리의 크기와 흐름을
+          감지하는 데만 사용되며, 대화가 끝나면 바로 꺼집니다.
         </p>
 
         <ul className="mt-4 space-y-2 text-xs text-[#8B95A1]">
           <li className="flex gap-2">
             <span className="text-[#3182F6]">•</span>
-            <span>작게 속삭일수록 봉인 게이지가 빨리 차요</span>
+            <span>차분히 말할수록 감정 정리가 깊어져요</span>
           </li>
           <li className="flex gap-2">
             <span className="text-[#3182F6]">•</span>
-            <span>큰 소리는 전남친의 저항을 유발해요</span>
+            <span>큰 목소리보다 낮고 편안한 목소리를 권장해요</span>
           </li>
           <li className="flex gap-2">
             <span className="text-[#3182F6]">•</span>
@@ -71,7 +71,7 @@ export default function MicPermissionGate({
             disabled={isRequesting}
             className="h-12 w-full rounded-xl bg-[#3182F6] text-[15px] font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-50"
           >
-            {isRequesting ? '권한 확인 중...' : '속삭이기 시작'}
+            {isRequesting ? '권한 확인 중...' : '전남친한테 못한 말 쏟아내기'}
           </button>
           <button
             type="button"

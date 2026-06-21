@@ -8,7 +8,7 @@ export function preloadImage(src) {
   })
 }
 
-/** 엔딩 비디오 버퍼링 — 게이지 100% 직후 끊김 방지 */
+/** 마무리 비디오 버퍼링 — 감정 정리 100% 직후 끊김 방지 */
 export function preloadVideo(src) {
   return new Promise((resolve, reject) => {
     const video = document.createElement('video')

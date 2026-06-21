@@ -33,7 +33,7 @@ export default function FinalEndingScene() {
         className="relative aspect-[3/4] w-full overflow-visible rounded-2xl"
         style={STAGE_BG}
       >
-        {/* 깨진 항아리 최종 일러스트 */}
+        {/* 감정 비우기 마무리 일러스트 */}
         <motion.div
           className="relative z-[4] flex h-full w-full items-center justify-center"
           initial={{ opacity: 0, y: 12 }}
@@ -42,7 +42,7 @@ export default function FinalEndingScene() {
         >
           <img
             src={FINAL_BROKEN_JAR_SRC}
-            alt="깨진 항아리 잔해"
+            alt="비워낸 감정을 상징하는 일러스트"
             className="mx-auto block h-auto w-full max-h-full select-none object-contain"
             style={{
               filter: JAR_GLOW_FILTER,
@@ -52,7 +52,7 @@ export default function FinalEndingScene() {
           />
         </motion.div>
 
-        {/* 보라색 연기 — 항아리 중심에서 무한 상승 */}
+        {/* 보라색 연기 — 중심에서 무한 상승 */}
         {smokeParticles.map((p) => (
           <motion.div
             key={p.id}
@@ -81,7 +81,7 @@ export default function FinalEndingScene() {
           />
         ))}
 
-        {/* 삭제 문구 — 이미지·연기 위 */}
+        {/* 완료 문구 — 이미지·연기 위 */}
         <AnimatePresence>
           {showDeleteLabel && (
             <motion.p
@@ -90,7 +90,7 @@ export default function FinalEndingScene() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.5, ease: 'easeOut' }}
             >
-              🗑 삭제
+              비워냄
             </motion.p>
           )}
         </AnimatePresence>

@@ -99,7 +99,7 @@ export default function GameApp() {
     return () => clearTimeout(timer)
   }, [milestonePulse])
 
-  /** 게이지 100% → 엔딩 영상 자동 재생 */
+  /** 감정 정리 100% → 마무리 영상 자동 재생 */
   useEffect(() => {
     if (gamePhase !== GAME_PHASE.SEAL) return
     if (!isGaugeFull) return
@@ -131,12 +131,12 @@ export default function GameApp() {
   }, [isUnsupported, isDenied, micSessionActive, browseWithoutMic])
 
   const handleRequestMic = async () => {
-    debugLog('마이크', '게이트 — 속삭이기 버튼 탭')
+    debugLog('마이크', '게이트 — 음성 테라피 버튼 탭')
     const ok = await startListening()
     if (ok) {
       setMicSessionActive(true)
       onMicSuccess()
-      debugLog('마이크', '세션 활성화 (게이지 상승 가능)')
+      debugLog('마이크', '세션 활성화 (감정 정리 진행 가능)')
     }
   }
 
@@ -194,15 +194,15 @@ export default function GameApp() {
     })
   }, [gauge, expression.label, criticalIntensity, isSealed])
 
-  const headerSubtitle = isDeleted
-    ? '모든 연결이 끊겼어요'
+  const statusMessage = isDeleted
+    ? '감정 비우기를 마쳤어요'
     : isDestroying
-      ? '봉인이 한계에 달했어요...'
+      ? '감정을 비워내는 중이에요...'
       : criticalIntensity > 0 && gauge < 100
-        ? '봉인이 곧 풀릴 것 같아...'
+        ? '감정이 많이 올라왔어요'
         : browseWithoutMic
           ? '마이크 없이 둘러보는 중이에요'
-          : '미련과 분노를 속삭이며 봉인하라'
+          : '차분히 말하며 감정을 비워내세요'
 
   return (
     <>
@@ -227,31 +227,15 @@ export default function GameApp() {
           aria-hidden
         />
 
-        <header className="relative z-10 mb-4 w-full max-w-sm shrink-0 text-center">
-          <h1
-            className={`bg-clip-text text-2xl font-bold tracking-tight text-transparent sm:text-3xl ${
-              isDeleted
-                ? 'bg-gradient-to-r from-purple-100 to-violet-200'
-                : 'bg-gradient-to-r from-purple-200 via-fuchsia-200 to-violet-300'
-            }`}
-          >
-            {isDeleted ? '삭제 완료' : '전남친 봉인 항아리'}
-          </h1>
-          <p
-            className={`mt-2 text-sm sm:text-base ${
-              isDeleted ? 'text-purple-300/80' : 'text-purple-300/70'
-            }`}
-          >
-            {headerSubtitle}
-          </p>
-        </header>
-
         {isSealed && micFallbackVariant && (
           <MicFallbackBanner variant={micFallbackVariant} />
         )}
 
         {isSealed && (
           <div className="relative z-10 mb-6 w-full max-w-xs shrink-0 rounded-2xl border border-white/10 bg-white/5 px-4 py-4 backdrop-blur-sm">
+            <p className="mb-3 text-center text-sm font-medium text-purple-200/80">
+              {statusMessage}
+            </p>
             <GaugeBar gauge={gauge} />
           </div>
         )}
@@ -315,7 +299,9 @@ export default function GameApp() {
               onClick={handleRestartMic}
               className="h-11 w-full max-w-xs rounded-xl bg-[#3182F6] px-6 text-sm font-semibold text-white transition-opacity hover:opacity-90"
             >
-              {browseWithoutMic || isDenied ? '속삭이기 다시 시작' : '속삭이기 시작'}
+              {browseWithoutMic || isDenied
+                ? '전남친한테 못한 말 다시 쏟아내기'
+                : '전남친한테 못한 말 쏟아내기'}
             </button>
           )}
 
@@ -325,7 +311,7 @@ export default function GameApp() {
               onClick={handleEndSession}
               className="text-xs font-medium text-purple-300/80 underline-offset-2 hover:underline"
             >
-              마이크 끄기 (리소스 해제)
+              음성 테라피 멈추기
             </button>
           )}
         </div>

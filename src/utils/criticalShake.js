@@ -1,4 +1,4 @@
-/** 임계점 흔들림 시작 게이지 (%) */
+/** 감정 고조 연출 시작 지점 (%) */
 export const CRITICAL_GAUGE_START = 90
 
 /**
@@ -13,7 +13,7 @@ export function getCriticalIntensity(gauge, peak = false) {
 }
 
 /**
- * 게이지 기반 동적 흔들림·룬 깜빡임 파라미터
+ * 감정 정리 정도 기반 동적 흔들림·빛 깜빡임 파라미터
  */
 export function getCriticalShakeMotion(intensity) {
   if (intensity <= 0) {

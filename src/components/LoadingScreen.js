@@ -6,8 +6,7 @@ export default function LoadingScreen({ progress, hasError, onRetry }) {
   return (
     <main
       className="flex min-h-[100dvh] min-h-[100svh] flex-col items-center justify-center px-6"
-      style={{ backgroundColor: BG_DEEP_MYSTERY }}
-      style={SAFE_AREA_OVERLAY}
+      style={{ ...SAFE_AREA_OVERLAY, backgroundColor: BG_DEEP_MYSTERY }}
     >
       <motion.div
         className="w-full max-w-xs text-center"
@@ -15,11 +14,11 @@ export default function LoadingScreen({ progress, hasError, onRetry }) {
         animate={{ opacity: 1, y: 0 }}
       >
         <p className="text-4xl" aria-hidden>
-          🏺
+          🌿
         </p>
         <h1 className="mt-4 text-xl font-bold text-purple-100">전남친 봉인 항아리</h1>
         <p className="mt-2 text-sm text-purple-300/80">
-          {hasError ? '에셋을 불러오지 못했어요' : '게임 리소스를 준비하고 있어요'}
+          {hasError ? '화면을 불러오지 못했어요' : '서비스를 준비하고 있어요'}
         </p>
 
         <div className="mt-8 h-2 overflow-hidden rounded-full bg-white/10">

@@ -4,19 +4,17 @@ export default {
   brand: {
     displayName: '전남친 봉인 항아리',
     primaryColor: '#3182F6',
-    icon: null,
+    icon: 'https://static.toss.im/appsintoss/50917/b0a75b7c-120c-4cbe-a5cc-ea408ca81d21.png',
   },
   web: {
-    host: 'localhost',
+    host: '172.30.26.170',
     port: 5173,
     commands: {
-      dev: 'vite dev',
+      dev: 'vite dev --host 0.0.0.0',
       build: 'vite build',
     },
   },
-  webViewProps: {
-    type: 'game',
-  },
+  webViewProps: {},
   permissions: [
     {
       name: 'microphone',

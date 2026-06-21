@@ -10,6 +10,7 @@ export default function ExitConfirmModal({ open, onCancel, onConfirmExit }) {
     const closed = await tryCloseTossView()
     if (closed) return
     if (window.history.length > 1) {
+      window.__allowTossFallbackBack = true
       window.history.go(-1)
     }
   }
@@ -30,10 +31,10 @@ export default function ExitConfirmModal({ open, onCancel, onConfirmExit }) {
         animate={{ scale: 1, y: 0 }}
       >
         <h2 id="exit-modal-title" className="text-lg font-bold text-[#191F28]">
-          게임이 종료됩니다
+          화면을 나갈까요?
         </h2>
         <p id="exit-modal-desc" className="mt-2 text-sm leading-relaxed text-[#4E5968]">
-          지금 나가면 진행 중인 봉인이 저장되지 않아요. 정말 나갈까요?
+          지금 나가면 진행 중인 감정 정리가 저장되지 않아요. 정말 나갈까요?
         </p>
 
         <div className="mt-6 flex flex-col gap-2">

@@ -1,5 +1,5 @@
 /**
- * 마이크 레벨 분류: 속삭임은 게이지 상승, 큰 소리는 저항(게이지 감소/정체)
+ * 마이크 레벨 분류: 차분한 목소리는 감정 정리 진행, 큰 소리는 잠시 완화
  */
 export const AUDIO_MODES = {
   SILENT: 'silent',
@@ -31,7 +31,7 @@ export function classifyAudioLevel(rms) {
   return { mode: AUDIO_MODES.SILENT, rms }
 }
 
-/** 속삭임일수록 더 빠르게 충전 (중간 구간이 최적) */
+/** 차분한 목소리일수록 감정 정리가 더 깊어짐 (중간 구간이 최적) */
 export function getGaugeDelta(mode, rms, deltaMs) {
   const sec = deltaMs / 1000
   if (mode === AUDIO_MODES.WHISPER) {

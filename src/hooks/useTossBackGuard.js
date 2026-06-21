@@ -29,6 +29,7 @@ export function useTossBackGuard({ enabled, onBackPress }) {
     window.history.pushState({ gameGuard: true }, '', window.location.href)
 
     const onPopState = () => {
+      if (window.__allowTossFallbackBack === true) return
       window.history.pushState({ gameGuard: true }, '', window.location.href)
       handleBack()
     }

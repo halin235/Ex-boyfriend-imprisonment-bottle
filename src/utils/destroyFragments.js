@@ -25,7 +25,7 @@ function pickShardCount() {
   return 8 + Math.floor(Math.random() * 5)
 }
 
-/** 바닥에 쌓이는 항아리 파편 (낙하 후 잔해 유지) */
+/** 바닥에 쌓이는 감정 조각 일러스트 (낙하 후 잔상 유지) */
 export function createJarShards(count = pickShardCount()) {
   const layouts = [...SHARD_LAYOUTS]
   while (layouts.length < count) {

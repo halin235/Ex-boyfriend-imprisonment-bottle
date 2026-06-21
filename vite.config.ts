@@ -46,6 +46,13 @@ export default defineConfig(({ mode }) => ({
     sourcemap: false,
     minify: 'esbuild',
   },
+  optimizeDeps: {
+    esbuildOptions: {
+      loader: {
+        '.js': 'jsx',
+      },
+    },
+  },
   esbuild: {
     drop: mode === 'production' ? ['console', 'debugger'] : [],
     legalComments: 'none',

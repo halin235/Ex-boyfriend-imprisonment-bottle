@@ -7,7 +7,7 @@ export default function GaugeBar({ gauge }) {
   return (
     <div className="w-full max-w-xs">
       <div className="mb-2 flex items-center justify-between text-xs font-medium text-[#8B95A1]">
-        <span>봉인 강도</span>
+        <span>비워낸 정도</span>
         <span className="tabular-nums text-[#4E5968]">{Math.round(clamped)}%</span>
       </div>
       <div className="relative h-2 overflow-hidden rounded-full bg-[#E5E8EB]">
